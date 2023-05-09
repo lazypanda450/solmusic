@@ -1,47 +1,33 @@
 {
-  "..\\node_modules\\@solana\\wallet-adapter-blocto\\lib\\esm\\adapter.mjs -> @blocto/sdk": {
-    "id": 2746,
+  "..\\node_modules\\@solana\\wallet-adapter-blocto\\lib\\esm\\adapter.js -> @blocto/sdk": {
+    "id": null,
+    "files": []
+  },
+  "..\\node_modules\\@solana\\wallet-adapter-ledger\\lib\\esm\\adapter.js -> @ledgerhq/hw-transport-webhid": {
+    "id": null,
+    "files": []
+  },
+  "..\\node_modules\\@solana\\wallet-adapter-solflare\\lib\\esm\\adapter.js -> @solflare-wallet/sdk": {
+    "id": 100,
     "files": [
-      "static/chunks/06f47d9b.ebdd7a9330bc4cc8.js"
+      "static/chunks/100.b6d7ee1f0056d126.js"
     ]
   },
-  "..\\node_modules\\@solana\\wallet-adapter-ledger\\lib\\esm\\adapter.mjs -> @ledgerhq/hw-transport-webhid": {
-    "id": 4210,
-    "files": [
-      "static/chunks/commons-68ba19112b27e02a.js",
-      "static/chunks/210.5dbce358d96bfd1f.js"
-    ]
+  "..\\node_modules\\@solana\\wallet-adapter-sollet\\lib\\esm\\base.js -> @project-serum/sol-wallet-adapter": {
+    "id": null,
+    "files": []
   },
-  "..\\node_modules\\@solana\\wallet-adapter-solflare\\lib\\esm\\adapter.mjs -> @solflare-wallet/sdk": {
-    "id": 4202,
-    "files": [
-      "static/chunks/202.185baddbee375cf4.js"
-    ]
-  },
-  "..\\node_modules\\@solana\\wallet-adapter-sollet\\lib\\esm\\base.mjs -> @project-serum/sol-wallet-adapter": {
-    "id": 6770,
-    "files": [
-      "static/chunks/770.c9440d2980d9d7e8.js"
-    ]
-  },
-  "..\\node_modules\\@solana\\wallet-adapter-torus\\lib\\esm\\adapter.mjs -> @toruslabs/solana-embed": {
-    "id": 4861,
-    "files": [
-      "static/chunks/29107295.fbcfe2172188e46f.js",
-      "static/chunks/commons-68ba19112b27e02a.js",
-      "static/chunks/335-afba2dea0d15b780.js",
-      "static/chunks/861.46aae09acbd0fd9b.js",
-      "static/chunks/507.734096b2c261caf9.js"
-    ]
+  "..\\node_modules\\@solana\\wallet-adapter-torus\\lib\\esm\\adapter.js -> @toruslabs/solana-embed": {
+    "id": null,
+    "files": []
   },
   "_app.js -> ../context/WalletConnectionProvider": {
     "id": 8866,
     "files": [
-      "static/chunks/8015bd09-f5d3566a86f71bdb.js",
-      "static/chunks/299-df4e9aee9337df8d.js",
-      "static/chunks/348-95826d1f46886d06.js",
-      "static/chunks/437.d2a5cc44883acc8d.js",
-      "static/chunks/98.472df70af19e27a4.js"
+      "static/chunks/8015bd09-dc14436069d07a4c.js",
+      "static/chunks/618-baec1ba6955b7898.js",
+      "static/chunks/943.78aecaca5f16b388.js",
+      "static/chunks/47.bf3d791f2e407757.js"
     ]
   }
 }
