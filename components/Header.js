@@ -1,7 +1,10 @@
 import Image from 'next/image'
 import UploadButton from './UploadButton'
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { SpotifyContext } from '../context/context'
+import { appAlbums } from '../data/songs copy'
+import {RiUploadCloud2Line} from 'react-icons/ri'
+import {RiHeartAddLine} from 'react-icons/ri'
 
 const styles = {
   header:`max-w-7xl m-auto p-3`,
@@ -16,45 +19,82 @@ const styles = {
   flex items-center`,
   iconContainer:`ml-10`,
   title:`text-6xl font-extrabold`,
-  playlistTextContent:`flex items-end mt-10`,
+  playlistTextContent:`flex items-end justify-center mt-10`,
   controlsContainer:`flex justify-center items-center mt-10`,
   playButton:`bg-green-500 w-16 h-16 flex justify-center items-center
   rounded-full cursor-pointer`,
 
 }
 
-const Header = ({ setShowUploadMusic }) =>{
+const Header = ({ setShowUploadMusic,headerCover, demo, PK, timer }) =>{
 
-  const { currentSong } = useContext(SpotifyContext)
 
+  const { currentSong, listCount, setListCount, albumDuration, playingPage,
+    likedSongs, setLikedSongs,currentPage, setCurrentPage, Pages, currentAlbum, setCurrentAlbum, play } = useContext(SpotifyContext)
+    const [title, setTitle] = useState(' ')
+  useEffect(() => {
+    setTitle(' ')
+    document.getElementById('likeCheck').checked= false;
+    document.getElementById('blank-heart').className = ''
+    document.getElementById('filled-heart').className = 'hidden'
+    console.log(currentSong.isLiked&&(appAlbums[currentAlbum-1].albumName===currentSong.album||currentPage===Pages.LikedSongs) + ' aa')
+      if(currentSong.isLiked&&(appAlbums[currentAlbum-1].albumName===currentSong.album||currentPage===Pages.LikedSongs)){
+        document.getElementById('likeCheck').checked= true;
+        document.getElementById('blank-heart').className = 'hidden'
+        document.getElementById('filled-heart').className = ''
+        if(currentPage===Pages.LikedSongs||currentPage===Pages.Playing && playingPage===Pages.LikedSongs){
+          setTitle(currentSong.title)
+        }
+      }
+    if((currentPage===Pages.Home||currentPage===Pages.Playing) && (playingPage===Pages.Home&& appAlbums[currentAlbum-1].albumName===currentSong.album)){
+      setTitle(currentSong.title)
+    }else if(currentPage===Pages.MyPlaylist&& playingPage===Pages.MyPlaylist||currentPage===Pages.Playing && playingPage===Pages.MyPlaylist && !(appAlbums[currentAlbum-1].albumName==currentSong.album)){
+      setTitle(currentSong.title)
+      console.log(appAlbums[currentAlbum-1].albumName===currentSong.album)
+    }
+    
+    if(currentPage===Pages.MyPlaylist||currentPage===Pages.Playing&&playingPage===Pages.MyPlaylist){
+      document.getElementById('blank-heart').className = 'hidden'
+      document.getElementById('filled-heart').className = 'hidden'
+    }
+    console.log(playingPage)
+  }, [currentSong, currentPage]) 
+
+  const like = ()=>{
+    var check = document.getElementById('likeCheck')
+
+    if(check.checked == true){
+      console.log('checked')
+      document.getElementById('blank-heart').className += ' hidden'
+      document.getElementById('filled-heart').className = ''
+      currentSong.isLiked = true
+    }else{
+      console.log('unchecked')
+      document.getElementById('blank-heart').className = ''
+      document.getElementById('filled-heart').className += 'hidden'
+      currentSong.isLiked = false
+      console.log(likedSongs)
+    }
+  }
+  
   return (
     <div classname={styles.header}>
       <div className={styles.headerWrapper}>
-        <div className="flex items-center">
-          <div className={styles.arrowButton}>
-            <Image
-            src = "/assets/chevronLeft.svg"
-            width={20}
-            height={20}
-            alt='left'
-            />
-          </div>
-          <div className={styles.arrowButton}>
-            <Image
-            src = "/assets/chevronRight.svg"
-            width={20}
-            height={20}
-            alt='right'
-            />
-          </div>
+        <div>
         </div>
-
         <div className={styles.headerRight}>
+            {!demo?
             <UploadButton 
             setShowUploadMusic={setShowUploadMusic}
             />
+            :
+            <div className={`bg-green-500 mr-10 px-3 py-1.5 cursor-pointer 
+            rounded-full hover:scale-95 transition`}>
+              {timer<60?'Trial Expires in: ' + (60-timer):'Trial Expires in: ' + 0}
+            </div>
+            }
         
-          <div className={styles.profile}>
+          {!demo?<div className={styles.profile}>
             <div className={styles.profileAvatarContainer}>
             <Image
                 src="/assets/avatar.jpg"
@@ -64,39 +104,80 @@ const Header = ({ setShowUploadMusic }) =>{
                 className='rounded-full'
               />
             </div>
-            <p>Muhammed Ekici</p>
+            <p>{PK}</p>
+          </div>:
+          <div className={styles.profile}>
+          <div className={styles.profileAvatarContainer}>
+          <Image
+              src="/assets/avatar.jpg"
+              width={20}
+              height={20}
+              alt='avatar'
+              className='rounded-full'
+            />
           </div>
+          <p>User PK</p>
+          </div>
+          }
         </div>
       </div>
       <div className={styles.playlistTextContent}>
-        <Image
-          src="/assets/yarim-kalan-ep.png"
+        {(currentPage===Pages.Home||currentPage===Pages.Playing && playingPage===Pages.Home)&&
+        <img
+          src={headerCover}
           width={300}
           height={300}
-        />
-        <div className='ml-5'>
-          <>Album</>
-          <div className={styles.title}>{currentSong.title}</div>
+          alt="artist"
+          id='album-image'
+        />}
+        {(currentPage===Pages.MyPlaylist||currentPage===Pages.Playing && playingPage===Pages.MyPlaylist)&&  
+        <RiUploadCloud2Line
+          size={300}
+          color='white'
+        /> }
+        {(currentPage===Pages.LikedSongs||currentPage===Pages.Playing && playingPage===Pages.LikedSongs)&&
+        <RiHeartAddLine
+          size={300}
+          color='white'
+        /> }
+          <div className='ml-5'>
+          <>{currentPage===Pages.Playing && playingPage===Pages.Home && appAlbums[appAlbums.findIndex(val=>val.albumName===currentSong.album)].albumName}</>
+          <>{currentPage===Pages.Home && appAlbums[currentAlbum-1].albumName}</>
+          <div className={styles.title}>{title}
+          </div>
           <div className='flex items-center mt-5'>
             <div className={styles.profileAvatarContainer}>
-              <Image
-              src="/assets/hidra.png"
-              width={20}
-              height={20}
-              alt="artist"
-              className='rounded-full'
-              />
+              {currentPage===Pages.Home && <img
+                src={appAlbums[currentAlbum-1].songs[0].artistCover}
+                width={20}
+                height={20}
+                alt="artist"
+                className='rounded-full'
+              />}
+              {currentPage===Pages.Playing&&!playingPage===Pages.MyPlaylist && <img
+                src={currentSong.artistCover}
+                width={20}
+                height={20}
+                alt="artist"
+                className='rounded-full'
+              />}
+              {(currentPage===Pages.MyPlaylist)&&''}
+              {(currentPage===Pages.LikedSongs)&&''}
             </div>
             <p>
               <span
-              className='text-bold'>Hidra • 2023 • 7 Songs • 24 dk
+              className='text-bold'>
+                {(currentPage===Pages.Home)&& appAlbums[currentAlbum-1].artiste +' • ' + appAlbums[currentAlbum-1].releaseDate +' • ' + listCount + ' Songs • ' + albumDuration+ ' dk' }
+                {(currentPage===Pages.Playing&&!(playingPage===Pages.MyPlaylist||playingPage===Pages.LikedSongs))&& appAlbums[appAlbums.findIndex(val=>val.albumName===currentSong.album)].artiste +' • ' + appAlbums[appAlbums.findIndex(val=>val.albumName===currentSong.album)].releaseDate +' • ' + listCount + ' Songs • ' + albumDuration+ ' dk' }
+                {(currentPage===Pages.MyPlaylist||currentPage===Pages.Playing && playingPage===Pages.MyPlaylist)&&  'Yüklediğim Müzikler: '+' '+ listCount + ' Songs' }
+                {(currentPage===Pages.LikedSongs||currentPage===Pages.Playing && playingPage===Pages.LikedSongs) &&  'Favori Müziklerim: '+' '+ listCount + ' Songs• ' + albumDuration+ ' dk'  }
               </span>
             </p>
           </div>
         </div>
       </div>
       <div className={styles.controlsContainer}>
-        <div className={styles.playButton}>
+        <div className={styles.playButton} id='play' onClick={play}>
           <Image
           src='/assets/play.svg'
           width={30}
@@ -105,28 +186,27 @@ const Header = ({ setShowUploadMusic }) =>{
           />
         </div>
         <div className={styles.iconContainer}>
-          <Image
+          <input type="checkbox" id='likeCheck' 
+          onClick={like}
+          className='hidden'/> 
+          <label htmlFor="likeCheck">
+          <div className='hidden' id='filled-heart'>
+            <Image
             src='/assets/heart.svg'
             width={30}
             height={30}
-            alt='heart'
+            alt='play'
             />
-        </div>
-        <div className={styles.iconContainer}>
-          <Image
-            src='/assets/download.svg'
+          </div>         
+          <div className='' id='blank-heart'>
+            <Image
+            src='/assets/blank-heart.svg'
             width={30}
             height={30}
-            alt='download'
+            alt='play'
             />
-        </div>
-        <div className={styles.iconContainer}>
-          <Image
-            src='/assets/more.svg'
-            width={30}
-            height={30}
-            alt='more'
-            />
+          </div>  
+          </label>         
         </div>
       </div>
     </div>

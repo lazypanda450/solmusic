@@ -1,7 +1,6 @@
-import { useContext } from "react";
 import { createContext, useState, useEffect } from "react";
-import { songs } from "../data/songs";
-// import {next} from "next/types";
+import { appAlbums } from "../data/songs copy";
+
 export const SpotifyContext = createContext()
 
 export const SpotifyProvider = ({ children })  => {
@@ -12,6 +11,29 @@ export const SpotifyProvider = ({ children })  => {
     const [volume, setVolume] = useState(false)
     const [timestamp, setTimestamp] = useState(false)
     const [duration, setDuration] = useState(false)
+    const [listCount, setListCount] = useState(0)
+    const [albumDuration, setAlbumDuration] = useState('null')
+    const [albumsShown, setAlbumsShown] = useState(true)
+    const [currentAlbum, setCurrentAlbum] = useState(3)
+    const [playingPage, setPlayingPage] = useState(0)
+    const [descSongs,setDescSongs] = useState([])
+    const [isTimedOut, setIsTimedOut] = useState(true)
+    
+    const [currentPage,setCurrentPage] = useState(0)
+    const Pages= {
+        Home:0,
+        Playing:1,
+        MyPlaylist:2,
+        LikedSongs:3
+    }
+
+    useEffect(() => {
+        appAlbums.forEach(album=>{
+        album.songs.forEach(song=>{
+            setDescSongs(descSongs=>[...descSongs, song])
+            })
+        })
+    }, [])
 
     useEffect(() => {
         if (isPlaying) {
@@ -33,12 +55,21 @@ export const SpotifyProvider = ({ children })  => {
     }
 
     const playOnSelect = (song)  =>{
-        try{
+        try{ 
             document.querySelector('#audio-element').src = song.musicUrl
             document.querySelector('#audio-element').play()
             setCurrentSong(song)
             setIsPaused(false)
             setIsPlaying(true)
+            if(currentPage===Pages.Home){
+                setPlayingPage(0)
+            }else if(currentPage===Pages.Playing){
+
+            }else if(currentPage===Pages.MyPlaylist){
+                setPlayingPage(2)
+            }else if(currentPage===Pages.LikedSongs){
+                setPlayingPage(3)
+            }
         }catch(e){
             console.log(e.message)
         }
@@ -75,30 +106,11 @@ export const SpotifyProvider = ({ children })  => {
         document.querySelector('#audio-element').volume = _volume
     }
 
-    const playNext = (songs) =>{
-        const id = songs.findIndex(value => value === currentSong)
-        console.log(id)
-        if(songs.length === id +1){
-            playOnSelect(songs[0])
-            setCurrentSong(songs[0])
-            return
-        }
-        else{
-        const nextSong = songs[id+1]
-        playOnSelect(nextSong)
-        }
+    const playNext = () =>{
+        playOnSelect(appAlbums[appAlbums.findIndex(val=>val.albumName===currentSong.album)].songs[currentSong.index+1])
     }
-    const playPrevious = (songs) =>{
-        const id = songs.findIndex(value => value === currentSong)
-        if(id === 0){
-            playOnSelect(songs[songs.length-1])
-            setCurrentSong(songs[songs.length-1])
-            return
-        }
-        else{
-        const prevSong = songs[id-1]
-        playOnSelect(prevSong)
-        }
+    const playPrevious = () =>{
+        playOnSelect(appAlbums[appAlbums.findIndex(val=>val.albumName===currentSong.album)].songs[currentSong.index-1])
     }
 
     return <SpotifyContext.Provider
@@ -106,18 +118,25 @@ export const SpotifyProvider = ({ children })  => {
         isPlaying, setIsPlaying,
         isPaused, setIsPaused,
         currentSong, setCurrentSong,
+        currentPage,setCurrentPage,
+        listCount,setListCount,
+        albumDuration,setAlbumDuration,
+        albumsShown,setAlbumsShown,
+        currentAlbum,setCurrentAlbum,
+        isTimedOut, setIsTimedOut,
+        volume,updateVolume,
+        progress,updateProgress, 
         play, pause,
-        updateProgress, progress,
+        playNext,
+        playPrevious,
         playOnSelect,
         onProgressChange,
         onVolumeChange,
-        playNext,
-        playPrevious,
         timestamp,
-        updateVolume,
-        volume,
         duration,
-
+        Pages,
+        playingPage,
+        descSongs,
     }}
     >{children}</SpotifyContext.Provider>
 }

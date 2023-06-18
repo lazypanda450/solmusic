@@ -100,7 +100,7 @@ export const Payment = () => {
     wallet.disconnect();
   }
 
-  if (isPaid) return <HomePage />
+  if (isPaid) return <HomePage PK={short}/>
 
   return (
     <div className={styles.main}>

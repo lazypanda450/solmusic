@@ -6,7 +6,9 @@ const nextConfig = {
   },
   images: {
     domains: [
-      
+      "i.scdn.co",
+      "resources.tidal.com",
+      "encrypted-tbn1.gstatic.com"
     ],
   },
 }

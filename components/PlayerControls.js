@@ -9,6 +9,7 @@ import pauseIcon from "../public/assets/pause.svg"
 
 import { useContext } from "react"
 import { SpotifyContext } from "../context/context"
+import { RiUploadCloud2Line } from "react-icons/ri"
 import { songs } from "../data/songs"
 
 const styles = {
@@ -22,11 +23,9 @@ const styles = {
     coverPhoto:`object-cover`,
 }
 
-const PlayerControls = ({songs}) => {
-    console.log(songs)
+const PlayerControls = () => {
     const { 
         currentSong,
-        isPlaying,
         volume,
         onVolumeChange,
         timestamp,
@@ -37,21 +36,28 @@ const PlayerControls = ({songs}) => {
         play,
         pause,
         onProgressChange,
-        duration
+        duration,
+        currentPage,
+        Pages,
+        playingPage,
      } = useContext(SpotifyContext)
-
-    //  if(!isPlaying) return null
 
   return (
     <div className={styles.mainControl}>
            <div className="flex max-w-xs">
                 <div className='mr-3' style={{minHeight:'80px',minWidth:'80px'}}>
-                    <Image
-                    src='/assets/yarim-kalan-ep.png'
+                    {currentSong.cover? 
+                    <img
+                    src={currentSong.cover} 
                     height='80px'
                     width='80px'
                     alt="song-cover"
                     />
+                    :
+                    <RiUploadCloud2Line
+                    size={80}
+                    color='white'
+                    />}
                 </div>
 
                 <div className="w-60">
@@ -62,12 +68,14 @@ const PlayerControls = ({songs}) => {
 
             <div>
                 <div className={styles.controlIconsContainer}>
-                    <div className={styles.controlIcon}>
+                    {/* <div className={styles.controlIcon}>
                         <Image src={shuffle}/>
-                    </div>
-                    <div onClick={e=>playPrevious(songs)} className={styles.controlIcon}>
+                    </div> */}
+                    {!((currentPage === Pages.MyPlaylist)||(currentPage===Pages.Playing&&playingPage===Pages.MyPlaylist))&&
+                    <div onClick={playPrevious} className={styles.controlIcon}>
                         <Image src={previous} alt="prev"/>
                     </div>
+                    }
                     {isPaused ? 
                     <div className={styles.playIcon} onClick={play}>
                         <Image
@@ -83,12 +91,13 @@ const PlayerControls = ({songs}) => {
                         />
                     </div>
                     }
-                    <div onClick={e=>playNext(songs)} className={styles.controlIcon}>
+                    {!((currentPage === Pages.MyPlaylist)||(currentPage===Pages.Playing&&playingPage===Pages.MyPlaylist))&&
+                    <div onClick={playNext} className={styles.controlIcon}>
                         <Image src={next} alt="next"/>
-                    </div>
-                    <div className={styles.controlIcon}>
+                    </div>}
+                    {/* <div className={styles.controlIcon}>
                         <Image src={repeat} alt="repeat"/>
-                    </div>
+                    </div> */}
                     
                 </div>
                 <div className={styles.flexCenter}>
