@@ -23,7 +23,9 @@ function Login() {
               <div class="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
               <div className={`flex flex-col items-center m-16`}>
                 <p className={styles.text}>Lütfen Giriş Yapınız</p>
-                <WalletMultiButton/>
+                <button className='bg-[#512da8] p-4'>
+                  <WalletMultiButton/>
+                </button>
               </div>
               </div>
           </div>
