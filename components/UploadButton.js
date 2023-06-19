@@ -14,7 +14,7 @@ const UploadButton = ({ setShowUploadMusic}) => {
     <div>
       <div className={styles.uploadButton}
       onClick={uploadClicked}>
-        Müzik Yükle
+        Upload Music
       </div>
     </div>
   )

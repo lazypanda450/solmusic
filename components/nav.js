@@ -22,16 +22,16 @@ const Nav = ({demo}) => {
       <div className='mb-10'>
         <NavLink 
         icon='assets/home.svg' 
-        title='Anasayfa' 
+        title='Home' 
         className={styles.link}  />
         {!(JSON.stringify(currentSong)=='{}')&& <NavLink
           icon='assets/playlist.svg'
-          title='Oynatılan'
+          title='Playing'
           className={styles.link}
         />}
         {!demo&&<NavLink
           icon='assets/playlist.svg'
-          title='Yüklemelerim'
+          title='My Uploads'
           className={styles.link}
         />}
       </div>

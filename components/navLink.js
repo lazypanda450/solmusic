@@ -8,13 +8,13 @@ const styles = {
 const NavLink = ({ title, icon }) => {
   const {setCurrentPage,setAlbumsShown} = useContext(SpotifyContext)
   const handleList = () =>{
-    if(title==='Anasayfa'){
+    if(title==='Home'){
       setCurrentPage(0)
       setAlbumsShown(true)
-    }else if (title==='Oynatılan'){
+    }else if (title==='Playing'){
       setCurrentPage(1)
       setAlbumsShown(false)
-    }else if (title==='Yüklemelerim'){
+    }else if (title==='My Uploads'){
       setCurrentPage(2)
       setAlbumsShown(false)
     }else if(title==='Liked Songs'){

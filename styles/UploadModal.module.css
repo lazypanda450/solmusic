@@ -71,6 +71,7 @@
   cursor: pointer;
   transition: 0.2s linear;
   width: 8rem;
+  height: 3rem;
   align-items: center;
   justify-content: center;
   display: flex;

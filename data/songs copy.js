@@ -118,7 +118,7 @@ export const appAlbums = [
         title: 'Bintis Selebiya',
         artiste: 'Efkan Şeşen',
         artistCover:'/assets/artists/efkansesen.png',
-        plays: 67892,
+        plays: 6789202,
         songLength: '2:30',
         album: 'Renkler ve Islıklar',
         cover:
@@ -160,7 +160,7 @@ export const appAlbums = [
         title: 'Sarı Gelin',
         artiste: 'Efkan Şeşen',
         artistCover:'/assets/artists/efkansesen.png',
-        plays: 338991,
+        plays: 3389911,
         songLength: '4:36',
         album: 'Renkler ve Islıklar',
         cover:
@@ -202,7 +202,7 @@ export const appAlbums = [
         title: 'Polyushka Polye',
         artiste: 'Efkan Şeşen',
         artistCover:'/assets/artists/efkansesen.png',
-        plays: 1765545,
+        plays: 17655645,
         songLength: '3:31',
         album: 'Renkler ve Islıklar',
         cover:
@@ -328,7 +328,7 @@ export const appAlbums = [
         title: 'Bella Ciao',
         artiste: 'Efkan Şeşen',
         artistCover:'/assets/artists/efkansesen.png',
-        plays: 2213653,
+        plays: 22136753,
         songLength: '2:09',
         album: 'Renkler ve Islıklar',
         cover:
@@ -380,7 +380,7 @@ export const appAlbums = [
         title: "İstanbul'da",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 428301,
         songLength: '4:36',
         album: 'İnandığın Masallar',
         cover:
@@ -394,7 +394,7 @@ export const appAlbums = [
         title: "Seni Bana Anlatırlar",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 192952,
         songLength: '4:25',
         album: 'İnandığın Masallar',
         cover:
@@ -408,7 +408,7 @@ export const appAlbums = [
         title: "Hele Bi Gel",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 3071667,
         songLength: '3:51',
         album: 'İnandığın Masallar',
         cover:
@@ -422,7 +422,7 @@ export const appAlbums = [
         title: "Beni Al",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 3889895,
         songLength: '3:36',
         album: 'İnandığın Masallar',
         cover:
@@ -436,7 +436,7 @@ export const appAlbums = [
         title: "Dön Bak Dünyaya",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 21196972,
         songLength: '6:33',
         album: 'İnandığın Masallar',
         cover:
@@ -450,7 +450,7 @@ export const appAlbums = [
         title: "Ben Nasıl Büyük Adam Olucam",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 180326,
         songLength: '4:27',
         album: 'İnandığın Masallar',
         cover:
@@ -464,7 +464,7 @@ export const appAlbums = [
         title: "Haftanın Sonu",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 407128,
         songLength: '3:29',
         album: 'İnandığın Masallar',
         cover:
@@ -478,7 +478,7 @@ export const appAlbums = [
         title: "Unutuldular",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 563792,
         songLength: '4:39',
         album: 'İnandığın Masallar',
         cover:
@@ -492,7 +492,7 @@ export const appAlbums = [
         title: "Yıldızlar",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 397001,
         songLength: '4:15',
         album: 'İnandığın Masallar',
         cover:
@@ -506,7 +506,7 @@ export const appAlbums = [
         title: "Gözler Anlatır",
         artiste: 'Pinhani',
         artistCover:'/assets/artists/pinhani.jpg',
-        plays: 64345,
+        plays: 957812,
         songLength: '4:25',
         album: 'İnandığın Masallar',
         cover:
@@ -529,7 +529,7 @@ export const appAlbums = [
         title: "Sen Ağlama",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 15027741,
         songLength: '5:46',
         album: 'Sen Ağlama',
         cover:
@@ -543,7 +543,7 @@ export const appAlbums = [
         title: "Haydi Gel Benimle Ol",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 15851705,
         songLength: '4:31',
         album: 'Sen Ağlama',
         cover:
@@ -557,7 +557,7 @@ export const appAlbums = [
         title: "Geri Dön",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays:64345,
+        plays: 7218795,
         songLength: '4:19',
         album: 'Sen Ağlama',
         cover:
@@ -571,7 +571,7 @@ export const appAlbums = [
         title: "Yeter",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 1085475,
         songLength: '3:17',
         album: 'Sen Ağlama',
         cover:
@@ -585,7 +585,7 @@ export const appAlbums = [
         title: "Bu Gece",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 6445,
+        plays: 3657852,
         songLength: '2:58',
         album: 'Sen Ağlama',
         cover:
@@ -599,7 +599,7 @@ export const appAlbums = [
         title: "Dağlar Dağlar",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 1125452,
         songLength: '3:12',
         album: 'Sen Ağlama',
         cover:
@@ -613,7 +613,7 @@ export const appAlbums = [
         title: "Çocuklar Gibi",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 231834,
         songLength: '4:16',
         album: 'Sen Ağlama',
         cover:
@@ -627,7 +627,7 @@ export const appAlbums = [
         title: "Tükeneceğiz",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 59051328,
         songLength: '4:19',
         album: 'Sen Ağlama',
         cover:
@@ -641,7 +641,7 @@ export const appAlbums = [
         title: "Bir Başka Aşk",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 235698,
         songLength: '3:42',
         album: 'Sen Ağlama',
         cover:
@@ -655,7 +655,7 @@ export const appAlbums = [
         title: "Bindokuzyüzkırk",
         artiste: 'Sezen Aksu',
         artistCover:'/assets/artists/sezen.jpg',
-        plays: 64345,
+        plays: 295768,
         songLength: '3:03',
         album: 'Sen Ağlama',
         cover:
@@ -678,7 +678,7 @@ export const appAlbums = [
         title: "Yolla",
         artiste: 'Tarkan',
         artistCover:'/assets/artists/tarkan.jpg',
-        plays: 64345,
+        plays: 1131200,
         songLength: '4:45',
         album: 'Yolla - Pop Orient Mix',
         artiste: 'Sezen Aksu',
@@ -702,7 +702,7 @@ export const appAlbums = [
         index: 0,
         title: "Martılar",
         artiste: 'Edis',
-        plays: 64.345,
+        plays: 2535687,
         songLength: '2:46',
         album: 'Martılar',
         cover:

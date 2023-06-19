@@ -22,8 +22,8 @@ const LikedPlaylist = ({albums}) => {
         <tbody className={styles.tableHeader}>
             <tr>
                 <th className="pb-3">#</th>
-                <th className="pb-3">Başlık</th>
-                <th className="pb-3">Oynatılan</th>
+                <th className="pb-3">Title</th>
+                <th className="pb-3">Plays</th>
                 <th className="pb-3">
                     <img src="assets/time.svg" alt="time" />
                 </th>

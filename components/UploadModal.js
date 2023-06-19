@@ -23,10 +23,10 @@ const UploadModal = ({
   return (
     <div className={styles.wrapper}>
         <div className={styles.modalTitle}>
-            Müzik Yükleme
+            Upload Music
         </div>
         <div className={styles.inputField}>
-            <div className={styles.inputTitle}>Başlık</div>
+            <div className={styles.inputTitle}>Title</div>
             <div className={styles.inputContainer}>
                 <input 
                 className={styles.input}
@@ -38,7 +38,7 @@ const UploadModal = ({
         </div>
         <div className={styles.inputField}>
             <div className={styles.inputTitle}>
-                Müzik URL'i
+                Music URL
             </div>
             <div className={styles.inputContainer}>
                 <input 
@@ -54,14 +54,14 @@ const UploadModal = ({
             onClick={()=>setShowUploadMusic(false)}
             className={styles.cancelButton}
             >
-            İptal
+            Cancel
             </button>
             <button
             onClick={newMusic}
             className={`${styles.button}
             ${styles.createButton}`}
             >
-            Yeni Müzik Yükle
+            Upload 
             </button>
         </div>
     </div>
