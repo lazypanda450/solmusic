@@ -46,7 +46,7 @@ export const Payment = () => {
   let last = PK.substring(PK.length - 4, PK.length)
   const short = first + `...` + last  
   
-  const [status,setStatus] = useState("Ödemeyi Doğrula")
+  const [status,setStatus] = useState("Verify Payment")
 
   const getAllWallets = async () => {
     const payerList = await program.account.payerAccount.all()
@@ -62,10 +62,10 @@ export const Payment = () => {
   }
   const onEvent = async ()=> {
     let myInterval = setInterval(()=>getAllWallets(),500)
-    setStatus("Doğrulanıyor...")
+    setStatus("Checking...")
     setTimeout(()=>clearInterval(myInterval),9000)
-    setTimeout(()=>setStatus("Doğrulama Başarısız."),9500)
-    setTimeout(()=>setStatus("Ödemeyi Doğrula"),10000)
+    setTimeout(()=>setStatus("Access Denied."),9500)
+    setTimeout(()=>setStatus("Verify Payment"),10000)
   }
 
 
@@ -89,7 +89,7 @@ export const Payment = () => {
             ...defaultAccounts,
           },
         })
-        alert('Transaction başarılı.')
+        alert('Transaction successful.')
       } catch (e) {
         alert(e.message)
       }
@@ -105,15 +105,15 @@ export const Payment = () => {
   return (
     <div className={styles.main}>
       <div className={styles.isConnectedButton}>
-        <button className={styles.button}>{wallet.connected ? short : `Bağlanılan Cüzdan Yok`}</button> 
-        <button className={styles.disconnect} onClick={disconnectWallet}>Bağlantıyı Kes</button>     
+        <button className={styles.button}>{wallet.connected ? short : `No Wallet Connected`}</button> 
+        <button className={styles.disconnect} onClick={disconnectWallet}>Disconnect</button>     
       </div>
       <div className={styles.payment}>
-        <p className={styles.text}>Lütfen Ödeme Yapınız</p>
+        <p className={styles.text}>Pay For Full Access</p>
         <div className={styles.buttons}>
           <button className={styles.button}
           onClick={payClicked}>
-            0.1 Sol Öde
+           Pay 0.1 Sol
           </button>
           <button className={styles.button}
           onClick={onEvent}>

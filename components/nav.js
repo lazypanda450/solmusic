@@ -25,7 +25,7 @@ const Nav = ({demo}) => {
         title='Home' 
         className={styles.link}  />
         {!(JSON.stringify(currentSong)=='{}')&& <NavLink
-          icon='assets/playlist.svg'
+          icon='assets/playing.svg'
           title='Playing'
           className={styles.link}
         />}
