@@ -23,7 +23,7 @@ function Login() {
               <div class="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
               <div className={`flex flex-col items-center m-16`}>
                 <p className={styles.text}>Lütfen Giriş Yapınız</p>
-                <button className='bg-[#512da8] p-4'>
+                <button className='bg-purple-700 rounded '> 
                   <WalletMultiButton/>
                 </button>
               </div>
@@ -35,14 +35,14 @@ function Login() {
       <div class="p-8 min-h-screen flex flex-col justify-center relative overflow-hidden sm:py-12">
         <div class="max-w-7xl mx-auto">
           <div class="relative group">
-            <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-green-900 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+            <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-teal-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <div class="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
               <div className={`flex flex-col items-center m-16`}>
                 <p className={styles.text}>Or Try Limited Trial</p>
                 <button type="button" class="m-1 focus:outline-none text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:ring-green-300 font-medium rounded text-base px-5 py-2.5  dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
                 onClick={()=>setDemo(true)}
                 >
-                FREE DEMO</button>
+                Free DEMO</button>
               </div>
               </div>
           </div>
