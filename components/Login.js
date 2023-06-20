@@ -3,6 +3,8 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import { useWallet } from '@solana/wallet-adapter-react'
 import { Payment } from './Payment'
 import DemoPage from '../pages/demopage'
+import {TiStarOutline} from 'react-icons/ti'
+import {FaGithub} from 'react-icons/fa'
 
 const styles = {
     loginPage:`w-screen h-screen bg-white flex justify-center`,
@@ -47,6 +49,18 @@ function Login() {
               </div>
           </div>
         </div>
+      </div>
+      <div className='text-black flex fixed bottom-2'>
+      <div class="max-w-7xl mx-auto">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-teal-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+              <div class="relative px-4 py-3 pb-1 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
+              <a href="https://github.com/ekcmuhammed08/solana-spotify-clone" target="_blank" className='flex text-base font-sans font-medium'>
+                <TiStarOutline size={22}/> STAR US <FaGithub size={30} className='pb-1'/>
+              </a> 
+            </div>
+          </div>
+      </div>  
       </div>
     </div>
   )

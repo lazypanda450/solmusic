@@ -6,6 +6,7 @@ import { useWallet } from '@solana/wallet-adapter-react'
 import { PublicKey } from '@solana/web3.js'
 import  HomePage  from '../pages/homepage'
 
+
 const anchor = require('@project-serum/anchor')
 
 const { web3 } = anchor
@@ -109,18 +110,26 @@ export const Payment = () => {
         <button className={styles.disconnect} onClick={disconnectWallet}>Disconnect</button>     
       </div>
       <div className={styles.payment}>
-        <p className={styles.text}>Pay For Full Access</p>
-        <div className={styles.buttons}>
-          <button className={styles.button}
-          onClick={payClicked}>
-           Pay 0.1 Sol
-          </button>
-          <button className={styles.button}
-          onClick={onEvent}>
-            {status}
-          </button>
+      <div class="max-w-7xl mx-auto">
+            <div class="relative group">
+              <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-teal-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <div class="relative px-4 py-3 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex flex-col items-top items-center space-x-6">
+                <p className={styles.text}>Pay For Full Access</p>
+                <div className={styles.buttons}>
+                  <button className={styles.button}
+                  onClick={payClicked}>
+                  Pay 0.1 Sol
+                  </button>
+                  <button className={styles.button}
+                  onClick={onEvent}>
+                    {status}
+                  </button> 
+                </div>
+              </div>
+            </div>
+      </div> 
       </div>
-      </div>
+      
     </div>
   )
 }

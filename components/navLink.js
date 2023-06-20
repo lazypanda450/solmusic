@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { SpotifyContext } from "../context/context"
 const styles = {
   navLink: `flex item-center mb-5 cursor-pointer hover:text-[#fff] text-[#b3b3b3]`,
@@ -6,7 +6,15 @@ const styles = {
 }
 
 const NavLink = ({ title, icon }) => {
-  const {setCurrentPage,setAlbumsShown} = useContext(SpotifyContext)
+  const {currentPage,setCurrentPage,setAlbumsShown} = useContext(SpotifyContext)
+  const [style, setStyle] = useState('')
+  useEffect(() => {
+    if(currentPage === 0 && title ==='Home'||currentPage === 1 && title ==='Playing'||currentPage === 2 && title ==='My Uploads'||currentPage === 3 && title ==='Liked Songs'){
+      setStyle(' pl-4')
+    }else{
+      setStyle('')
+    }
+  }, [currentPage])
   const handleList = () =>{
     if(title==='Home'){
       setCurrentPage(0)
@@ -24,7 +32,7 @@ const NavLink = ({ title, icon }) => {
     
   }
   return (
-    <div className={styles.navLink}
+    <div className={styles.navLink + style}
     onClick={handleList}>
       <img alt='' src={icon} width={20} height={20} />
       <p className={styles.navLinkText}>{title}</p>

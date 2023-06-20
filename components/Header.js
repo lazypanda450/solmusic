@@ -169,8 +169,8 @@ const Header = ({ setShowUploadMusic,headerCover, demo, PK, timer }) =>{
               className='text-bold'>
                 {(currentPage===Pages.Home)&& appAlbums[currentAlbum-1].artiste +' • ' + appAlbums[currentAlbum-1].releaseDate +' • ' + listCount + ' Songs • ' + albumDuration+ ' dk' }
                 {(currentPage===Pages.Playing&&!(playingPage===Pages.MyPlaylist||playingPage===Pages.LikedSongs))&& appAlbums[appAlbums.findIndex(val=>val.albumName===currentSong.album)].artiste +' • ' + appAlbums[appAlbums.findIndex(val=>val.albumName===currentSong.album)].releaseDate +' • ' + listCount + ' Songs • ' + albumDuration+ ' dk' }
-                {(currentPage===Pages.MyPlaylist||currentPage===Pages.Playing && playingPage===Pages.MyPlaylist)&&  'Yüklediğim Müzikler: '+' '+ listCount + ' Songs' }
-                {(currentPage===Pages.LikedSongs||currentPage===Pages.Playing && playingPage===Pages.LikedSongs) &&  'Favori Müziklerim: '+' '+ listCount + ' Songs• ' + albumDuration+ ' dk'  }
+                {(currentPage===Pages.MyPlaylist||currentPage===Pages.Playing && playingPage===Pages.MyPlaylist)&&  'My Uploads: '+' '+ listCount + ' Songs' }
+                {(currentPage===Pages.LikedSongs||currentPage===Pages.Playing && playingPage===Pages.LikedSongs) &&  'My Favorites: '+' '+ listCount + ' Songs• ' + albumDuration+ ' dk'  }
               </span>
             </p>
           </div>
