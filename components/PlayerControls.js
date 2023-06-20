@@ -13,7 +13,7 @@ import { RiUploadCloud2Line } from "react-icons/ri"
 import { songs } from "../data/songs"
 
 const styles = {
-    mainControl:` fixed bottom-0 left-0 py-3 p-5 pr-10 w-screen 
+    mainControl:` fixed bottom-0 left-0 py-3 p-5 pr-10 
     bg-[#242424] z-40 flex item-center justify-between`,
     flexCenter:`flex items-center`,
     controlIcon:`mr-5 cursor-pointer hover:opacity-100 opacity-50`,
