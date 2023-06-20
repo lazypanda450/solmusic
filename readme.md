@@ -1,34 +1,9 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![image](https://github.com/ekcmuhammed08/solana-spotify-clone/assets/102401307/8ec7c97c-1736-4f89-9b89-bc46c5fa3c80)
 
-## Getting Started
+![image](https://github.com/ekcmuhammed08/solana-spotify-clone/assets/102401307/3bc6b925-390e-49e3-bc6a-7ad2749539ee)
 
-First, run the development server:
+![image](https://github.com/ekcmuhammed08/solana-spotify-clone/assets/102401307/62011111-4e95-4afb-97bd-a391894145cf)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+![image](https://github.com/ekcmuhammed08/solana-spotify-clone/assets/102401307/4c9abc60-77d8-4743-a26e-55ea17b771d0)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![image](https://github.com/ekcmuhammed08/solana-spotify-clone/assets/102401307/e86e228f-0374-46ce-ba0b-0b73500545ee)
