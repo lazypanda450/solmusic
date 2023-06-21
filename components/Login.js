@@ -18,7 +18,7 @@ function Login() {
     if(wallet.connected) return<Payment/>
   return (
     <div className={styles.loginPage}>
-      <div class="p-8 h-full sm:min-h-screen flex flex-col sm:flex-row justify-center relative overflow-hidden py-0 sm:py-12">
+      <div class="p-8 h-full sm:min-h-screen flex flex-col justify-center relative overflow-hidden sm:py-12">
         <div class="max-w-7xl mx-auto">
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
