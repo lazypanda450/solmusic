@@ -55,9 +55,9 @@ function Login() {
           <div class="relative group">
             <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-teal-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <div class="relative px-4 py-3 pb-1 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-              <a href="https://github.com/ekcmuhammed08/solana-spotify-clone" target="_blank" className='flex text-base font-sans font-medium'>
-                <TiStarOutline size={22}/> STAR US <FaGithub size={30} className='pb-1'/>
-              </a> 
+              // <a href="https://github.com/ekcmuhammed08/solana-spotify-clone" target="_blank" className='flex text-base font-sans font-medium'>
+              //   <TiStarOutline size={22}/> STAR US <FaGithub size={30} className='pb-1'/>
+              // </a> 
             </div>
           </div>
       </div>  
